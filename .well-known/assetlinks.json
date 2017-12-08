@@ -1,9 +1,0 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.sarkaribabu.paperbank",
-    "sha256_cert_fingerprints":
-    ["9D:87:D9:A1:22:F3:F1:1B:3A:B2:48:9C:6F:83:98:7C:1D:C7:78:96:B0:49:CD:7E:10:78:98:B4:27:3A:49:06"]
-  }
-}]
