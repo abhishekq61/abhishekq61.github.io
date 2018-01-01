@@ -18,7 +18,7 @@
  <div  onclick="location.href='https://goo.gl/Zm4XFc';" style="cursor:pointer; background-color: white;text-align: center;width: 80px; height: 80px; position: fixed; opacity: 4; right: 0px; top: 0px;margin-right:18px">
 <i class="fa fa-download fa-5x" style="width:fill-parent;height:fill-parent;" aria-hidden="true"></i>
 </div>
-      
+     
 
 </div>
 <script LANGUAGE="JavaScript">
@@ -38,6 +38,7 @@ params = getParams();
 id = unescape(params["id"]);
 
 document.getElementById("pdfview").src="https://drive.google.com/file/d/"+id+"/preview";
+      document.write(navigator.userAgent);
 </script>
 </html>
 
