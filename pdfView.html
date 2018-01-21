@@ -42,9 +42,8 @@ return params;
 }
       function sendEvent()
       {
-                              ga('send', {
-  hitType: 'event',
-  eventCategory: 'Download Button Clicked',
+            gtag('event', 'Download Button Clicked', {
+   eventCategory: 'Download Button Clicked',
   eventAction: 'Redirected To PlayStore',
   eventLabel: id
 });
