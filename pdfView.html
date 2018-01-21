@@ -42,10 +42,9 @@ return params;
 }
       function sendEvent()
       {
-            gtag('event', 'Download Button Clicked', {
-   eventCategory: 'Download Button Clicked',
-  eventAction: 'Redirected To PlayStore',
-  eventLabel: id
+           gtag('event', 'website pdfview', {
+  'event_category': 'App Download',
+  'event_label': id
 });
             location.href='https://goo.gl/Zm4XFc';
       }
