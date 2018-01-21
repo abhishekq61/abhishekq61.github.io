@@ -46,6 +46,14 @@ id = unescape(params["id"]);
 document.getElementById("pdfview").src="https://drive.google.com/file/d/"+id+"/preview";
  
 </script>
+            <script>
+                  ga('send', {
+  hitType: 'event',
+  eventCategory: 'Download Button Clicked',
+  eventAction: 'Redirected To PlayStore',
+  eventLabel: id
+});
+            </script>
 </html>
 
     
