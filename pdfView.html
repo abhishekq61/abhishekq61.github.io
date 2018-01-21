@@ -42,6 +42,9 @@ return params;
 }
       function sendEvent()
       {
+            params = getParams();
+id = unescape(params["id"]);
+
            gtag('event', 'Redirect to PlayStore', {
   'event_category': 'App Download',
   'event_label': id
