@@ -21,7 +21,7 @@ if(navigator.userAgent!="PaperBank-WebView")
 
       <iframe id="pdfview" src=""   width=100% height=100% frameborder="0" scrolling="no" seamless=""></iframe>
 
- <div  onclick="location.href='https://goo.gl/Zm4XFc';" style="cursor:pointer; background-color: white;text-align: center;width: 80px; height: 80px; position: fixed; opacity: 4; right: 0px; top: 0px;margin-right:18px">
+ <div  onclick="sendEvent();" style="cursor:pointer; background-color: white;text-align: center;width: 80px; height: 80px; position: fixed; opacity: 4; right: 0px; top: 0px;margin-right:18px">
 <i class="fa fa-download fa-5x" style="width:fill-parent;height:fill-parent;" aria-hidden="true"></i>
 </div>
      
@@ -40,20 +40,23 @@ params[nameVal[0]] = nameVal[1];
 }
 return params;
 }
+      function sendEvent()
+      {
+                              ga('send', {
+  hitType: 'event',
+  eventCategory: 'Download Button Clicked',
+  eventAction: 'Redirected To PlayStore',
+  eventLabel: id
+});
+            location.href='https://goo.gl/Zm4XFc';
+      }
 params = getParams();
 id = unescape(params["id"]);
 
 document.getElementById("pdfview").src="https://drive.google.com/file/d/"+id+"/preview";
  
 </script>
-            <script>
-                  ga('send', {
-  hitType: 'event',
-  eventCategory: 'Download Button Clicked',
-  eventAction: 'Redirected To PlayStore',
-  eventLabel: id
-});
-            </script>
+           
 </html>
 
     
