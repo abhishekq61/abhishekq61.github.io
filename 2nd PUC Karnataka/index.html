@@ -140,7 +140,50 @@ if(navigator.userAgent.toLowerCase().includes("webview") ||  navigator.userAgent
 </html>
 
     
-   
+   <script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/vue.resource/1.2.0/vue-resource.min.js"></script>
+<style>
+        .thumbnail {
+            padding: 0px;
+            height: 20%;
+            width = 100%
+        }
+
+        .panel {
+            position: relative;
+        }
+
+        .panel > .panel-heading:after, .panel > .panel-heading:before {
+            position: absolute;
+            top: 11px;
+            left: -16px;
+            right: 100%;
+            width: 0;
+            height: 0;
+            display: block;
+            content: " ";
+            border-color: transparent;
+            border-style: solid solid outset;
+            pointer-events: none;
+        }
+
+        .panel > .panel-heading:after {
+            border-width: 7px;
+            border-right-color: #f7f7f7;
+            margin-top: 1px;
+            margin-left: 2px;
+        }
+
+        .panel > .panel-heading:before {
+            border-right-color: #ddd;
+            border-width: 8px;
+        }
+
+        .nav-tabs > .active {
+            color: #4c4742 !important;
+            background-color: #222222 !important;
+        }
+</style>
     
 
 <div id="comments" style="width: 80%;
