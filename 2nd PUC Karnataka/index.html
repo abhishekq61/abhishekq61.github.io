@@ -138,8 +138,6 @@ if(navigator.userAgent.toLowerCase().includes("webview") ||  navigator.userAgent
 
     </body>
 </html>
-
-    
    <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/vue.resource/1.2.0/vue-resource.min.js"></script>
 <style>
@@ -255,7 +253,7 @@ if(navigator.userAgent.toLowerCase().includes("webview") ||  navigator.userAgent
                     methods: {
                         addComment: function () {
                             this.$data.folderComment.folderPath = window.location.href;
-                            this.$http.post("http://sarkaribabu.herokuapp.com/addFolderComment", this.$data.folderComment).then(
+                            this.$http.post("https://sarkaribabu.herokuapp.com/addFolderComment", this.$data.folderComment).then(
                                     function (data) {
                                         window.location.reload();
                                     },
@@ -265,7 +263,7 @@ if(navigator.userAgent.toLowerCase().includes("webview") ||  navigator.userAgent
                             )
                         },
                         getComments: function () {
-                            this.$http.get("http://sarkaribabu.herokuapp.com/getFolderComment/" + encodeURIComponent(window.location.href)).then(
+                            this.$http.get("https://sarkaribabu.herokuapp.com/getFolderComment/" + encodeURIComponent(window.location.href)).then(
                                     function (data) {
                                         this.$data.comments = data.body;
                                     },
