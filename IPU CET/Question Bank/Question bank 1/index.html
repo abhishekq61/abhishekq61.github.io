@@ -157,3 +157,142 @@ if(navigator.userAgent.toLowerCase().includes("webview") ||  navigator.userAgent
 
     </body>
 </html>
+   <script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/vue.resource/1.2.0/vue-resource.min.js"></script>
+<style>
+        .thumbnail {
+            padding: 0px;
+            height: 20%;
+            width = 100%
+        }
+
+        .panel {
+            position: relative;
+        }
+
+        .panel > .panel-heading:after, .panel > .panel-heading:before {
+            position: absolute;
+            top: 11px;
+            left: -16px;
+            right: 100%;
+            width: 0;
+            height: 0;
+            display: block;
+            content: " ";
+            border-color: transparent;
+            border-style: solid solid outset;
+            pointer-events: none;
+        }
+
+        .panel > .panel-heading:after {
+            border-width: 7px;
+            border-right-color: #f7f7f7;
+            margin-top: 1px;
+            margin-left: 2px;
+        }
+
+        .panel > .panel-heading:before {
+            border-right-color: #ddd;
+            border-width: 8px;
+        }
+
+        .nav-tabs > .active {
+            color: #4c4742 !important;
+            background-color: #222222 !important;
+        }
+</style>
+    
+
+<div id="comments" style="width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FAFAFA;">
+    <div>
+        <ul class="nav nav-tabs" style="background-color: #ECEFF1">
+            <li class="active">
+                <a data-toggle="tab" href="#comment-list">Comments</a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#add-comment">Add Comments</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="comment-list" class="tab-pane fade in active">
+                <table class="table">
+                    <tbody>
+                        <tr v-for="comment in comments">
+                            <td style="width: 15%;">
+                                <div class="thumbnail">
+                                    <img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" style="width: 100% ;
+                                        height: 20%">
+                                </div><!-- /thumbnail -->
+                            </td>
+                            <td>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <strong>{{comment.commentedBy}}</strong> <span class="text-muted">commented {{comment.noOfDays}} days ago</span>
+                                    </div>
+                                    <div class="panel-body">
+                                        {{comment.comment}}
+                                    </div><!-- /panel-body -->
+                                </div><!-- /panel panel-default -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="add-comment" class="tab-pane fade">
+
+                <textarea v-model="folderComment.comment" placeholder="Comment..." class="form-control" rows="5" style="margin-top: 10px;
+                    resize: vertical;
+                    margin-bottom: 10px"></textarea>
+                <button class="btn btn-default" style="float: right" v-on:click="addComment()">POST</button>
+                <div style="margin-bottom: 100px"></div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<script>
+        var app = new Vue(
+                {
+                    el: "#comments",
+                    data: {
+                        folderComment: {
+                            comment: '',
+                            appPackageName: '',
+                            folderPath: ''
+                        },
+                        comments: []
+                    },
+                    methods: {
+                        addComment: function () {
+                            this.$data.folderComment.folderPath = window.location.href;
+                            this.$http.post("https://sarkaribabu.herokuapp.com/addFolderComment", this.$data.folderComment).then(
+                                    function (data) {
+                                        window.location.reload();
+                                    },
+                                    function (error) {
+
+                                    }
+                            )
+                        },
+                        getComments: function () {
+                            this.$http.get("https://sarkaribabu.herokuapp.com/getFolderComment/" + encodeURIComponent(window.location.href)).then(
+                                    function (data) {
+                                        this.$data.comments = data.body;
+                                    },
+                                    function (error) {
+
+                                    }
+                            )
+                        }
+                    }
+                }
+        );
+        app.getComments();
+</script>
