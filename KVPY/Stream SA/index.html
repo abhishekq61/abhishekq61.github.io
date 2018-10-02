@@ -90,6 +90,11 @@
                 <td class="col-md-1"><a href="/pdfView.html?id=0BzOoGOAZC_3wMUd0VVltcXhHZlU&name=2016.pdf" style="">Download PDF</a></td>
             </tr>
 
+<tr>
+                <td class="col-md-1">2017(contributed by Sachin Sharma).pdf</td>
+                <td class="col-md-1"><a href="/pdfView.html?id=1NYpCLsYFaTAPN3yv27c6kqN6rMUp3pu4&name=2017(contributed by Sachin Sharma).pdf" style="">Download PDF</a></td>
+            </tr>
+
 </tbody>
     </table>
 <br><br>
@@ -173,7 +178,7 @@ if(navigator.userAgent.toLowerCase().includes("webview") )
                         <tr v-for="comment in comments">
                             <td style="width: 15%;">
                                 <div class="thumbnail">
-                                    <img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" style="width: 100% ;
+                                    <img :src="comment.user.imageUrl" style="width: 100% ;
                                         height: 20%">
                                 </div><!-- /thumbnail -->
                             </td>

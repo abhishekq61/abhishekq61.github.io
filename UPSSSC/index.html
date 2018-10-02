@@ -76,9 +76,25 @@ Download UPSSSC Previous Year Papers with Solutions and Study Material.Download 
                 <td class="col-md-1"><a href="Chakbandi Lekhpal/" style="">Download PDF</a></td>
             </tr>
 
+<tr>
+                <td class="col-md-1">Yuva Vikas Adhikari Previous year Papers</td>
+                <td class="col-md-1"><a href="Yuva Vikas Adhikari/" style="">Download PDF</a></td>
+            </tr>
+
 </tbody>
     </table>
 <br><br>
+
+<div id="tags" class="well well-sm">
+<p>Contents:</p>
+
+<ul>
+
+<li>Yuva Vikas Adhikari/2018(contributed by Gaurav Tiwari).pdf</li>
+
+</ul>
+
+</div>
 
 </div>
 
@@ -159,7 +175,7 @@ if(navigator.userAgent.toLowerCase().includes("webview") )
                         <tr v-for="comment in comments">
                             <td style="width: 15%;">
                                 <div class="thumbnail">
-                                    <img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" style="width: 100% ;
+                                    <img :src="comment.user.imageUrl" style="width: 100% ;
                                         height: 20%">
                                 </div><!-- /thumbnail -->
                             </td>

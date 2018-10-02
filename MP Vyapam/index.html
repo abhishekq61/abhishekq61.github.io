@@ -112,6 +112,11 @@ Download MP Vyapam Previous Year Papers with Solutions and Study Material.Downlo
             </tr>
 
 <tr>
+                <td class="col-md-1">Varg 2 Maths Previous year Papers</td>
+                <td class="col-md-1"><a href="Varg 2 Maths/" style="">Download PDF</a></td>
+            </tr>
+
+<tr>
                 <td class="col-md-1">Vyapam PAT Previous year Papers</td>
                 <td class="col-md-1"><a href="/Vyapam PAT/" style="">Download PDF</a></td>
             </tr>
@@ -181,6 +186,7 @@ Download MP Vyapam Previous Year Papers with Solutions and Study Material.Downlo
 <li>Sub Inspector/Paper7.pdf</li>
 <li>Sub Inspector/Paper8.pdf</li>
 <li>Sub Inspector/Paper9.pdf</li>
+<li>Varg 2 Maths/Previous Year Paper-Part-1 (contributed by  fav video Jain).pdf</li>
 <li>Vyapam PAT/PAT-2013-PAPER-I.pdf</li>
 <li>Vyapam PAT/PAT-2013-PAPER-II.pdf</li>
 <li>Vyapam PAT/PAT-2014.pdf</li>
@@ -280,7 +286,7 @@ if(navigator.userAgent.toLowerCase().includes("webview") )
                         <tr v-for="comment in comments">
                             <td style="width: 15%;">
                                 <div class="thumbnail">
-                                    <img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" style="width: 100% ;
+                                    <img :src="comment.user.imageUrl" style="width: 100% ;
                                         height: 20%">
                                 </div><!-- /thumbnail -->
                             </td>

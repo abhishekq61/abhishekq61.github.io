@@ -97,6 +97,7 @@ Download KVPY Previous Year Papers with Solutions and Study Material.Download KV
 <li>Stream SA/2014.pdf</li>
 <li>Stream SA/2015.pdf</li>
 <li>Stream SA/2016.pdf</li>
+<li>Stream SA/2017(contributed by Sachin Sharma).pdf</li>
 <li>Stream SB SX/2009/2009.pdf</li>
 <li>Stream SB SX/2010/2010 ans.pdf</li>
 <li>Stream SB SX/2010/2010 ques.pdf</li>
@@ -192,7 +193,7 @@ if(navigator.userAgent.toLowerCase().includes("webview") )
                         <tr v-for="comment in comments">
                             <td style="width: 15%;">
                                 <div class="thumbnail">
-                                    <img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" style="width: 100% ;
+                                    <img :src="comment.user.imageUrl" style="width: 100% ;
                                         height: 20%">
                                 </div><!-- /thumbnail -->
                             </td>

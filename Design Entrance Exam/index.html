@@ -107,6 +107,8 @@ Download Design Entrance Exam Previous Year Papers with Solutions and Study Mate
 <li>CEED/2015.pdf</li>
 <li>CEED/2016.pdf</li>
 <li>CEED/2017.pdf</li>
+<li>CEED/2018/AnswerKey.pdf</li>
+<li>CEED/2018/Question Paper.pdf</li>
 <li>IIFT/2005.pdf</li>
 <li>IIFT/2006.pdf</li>
 <li>IIFT/2007.pdf</li>
@@ -221,7 +223,7 @@ if(navigator.userAgent.toLowerCase().includes("webview") )
                         <tr v-for="comment in comments">
                             <td style="width: 15%;">
                                 <div class="thumbnail">
-                                    <img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" style="width: 100% ;
+                                    <img :src="comment.user.imageUrl" style="width: 100% ;
                                         height: 20%">
                                 </div><!-- /thumbnail -->
                             </td>
